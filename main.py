@@ -15,36 +15,24 @@ def main(screen_width, screen_height):
     print(f"Screen height: {screen_height}")
 
     screen = pygame.display.set_mode((screen_width, screen_height))
-
     clock = pygame.time.Clock() # A new clock object
-
     dt = 0 # initializing a delta time to use for movement
 
     
     updatable = pygame.sprite.Group() # Creating an instance of a group for updatable classes
-    
     drawable = pygame.sprite.Group() # Creating an instance of a group for drawable classes
-
-    Player.containers = (updatable, drawable) # adding the Player class as a member of both drawable and updatable groups
-
-    x = screen_width / 2 # setting up the x value for the player.
-
-    y = screen_height / 2 # setting up the y value for the player.
-
-    player = Player(x, y) # creating the player instance with the x and y variables.
-    
-    asteroids = pygame.sprite.Group() # Creating an instanc of a group for the asteroids class.
-
-    Asteroid.containers = (asteroids, updatable, drawable) # Adding the Asteroid class as a member of the three given groups.
-
-    AsteroidField.containers = (updatable) # Adding the AsteroidField class as a member of the updatable group.
-
-    asteroid_field = AsteroidField() # Initializing an AsteroidField object.
-
     shots = pygame.sprite.Group() # Creating an instance of a group for the shots class.
-
+    asteroids = pygame.sprite.Group() # Creating an instanc of a group for the asteroids class.
+    
+    Player.containers = (updatable, drawable) # adding the Player class as a member of both drawable and updatable groups
+    Asteroid.containers = (asteroids, updatable, drawable) # Adding the Asteroid class as a member of the three given groups.
+    AsteroidField.containers = (updatable) # Adding the AsteroidField class as a member of the updatable group.
     Shot.containers = (shots, updatable, drawable) # Adding the Shot class to the given groups.
 
+    x = screen_width / 2 # setting up the x value for the player.
+    y = screen_height / 2 # setting up the y value for the player.
+    player = Player(x, y) # creating the player instance with the x and y variables.
+    asteroid_field = AsteroidField() # Initializing an AsteroidField object.
     
 
     
@@ -66,13 +54,7 @@ def main(screen_width, screen_height):
             for shot in shots:
                 if shot.collision(asteroid):
                     shot.kill()
-                    asteroid.kill()
-        
-
-            
-        
-        
-            
+                    asteroid.split()
 
         # drawing each member of the drawable group on the screen
         for sprite in drawable:

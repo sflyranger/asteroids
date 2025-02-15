@@ -1,7 +1,9 @@
 # asteroids
+
 Creating a small scale version of the asteroids game
 -----------------------
 ## First Commit:
+
 For my first commit I imported the neccessary pygame package and created a constants.py file that houses some variables I will be using in the asteroids game. 
 I also initialized a screen variable that creates an empty black window that can be opened by calling the main.py file and closed by clicking on the top right exit button.
 -------------------

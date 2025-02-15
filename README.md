@@ -30,41 +30,55 @@ For my second commit, I included a few new `.py` files and some new logic and va
 - Created a global `clock` variable and `delta time` variable to reduce CPU utilization.  
 
 ---
-## Third Commit:
-For my third commit, I added shooting functionality and asteroid spawning logic.
 
-### shot.py
-Created a Shot class inheriting from CircleShape to represent the player's shots. Added methods to draw and update the shot's position.
+## Third Commit  
 
-### player.py
-Added shooting functionality to the Player class. The player can now shoot by pressing the space bar, creating Shot instances that move in the direction the player is facing.
+For my third commit, I added shooting functionality and asteroid spawning logic.  
 
-### main.py changes
-Updated the main function to include groups for updatable, drawable, shots, and asteroids. Added collision detection between the player, shots, and asteroids. The game ends if the player collides with an asteroid, and asteroids are destroyed if hit by a shot.
+### `shot.py`  
+- Created a `Shot` class inheriting from `CircleShape` to represent the player's shots.  
+- Added methods to draw and update the shot’s position.  
 
-### asteroidfield.py
-Created an AsteroidField class to handle spawning new asteroids at random intervals and positions along the screen edges.
+### `player.py`  
+- Added shooting functionality to the `Player` class.  
+- The player can now shoot by pressing the space bar, creating `Shot` instances that move in the direction the player is facing.  
 
-### asteroid.py
-Created an Asteroid class inheriting from CircleShape to represent asteroids. Added methods to draw and update the asteroid's position.
+### `main.py` Changes  
+- Updated the main function to include groups for updatable, drawable, shots, and asteroids.  
+- Added collision detection between the player, shots, and asteroids.  
+- The game ends if the player collides with an asteroid.  
+- Asteroids are destroyed when hit by a shot.  
 
-### constants.py
-Added constants for player shooting speed and cooldown, as well as shot radius.
+### `asteroidfield.py`  
+- Created an `AsteroidField` class to handle spawning new asteroids at random intervals and positions along the screen edges.  
 
-### circleshape.py
-Updated the CircleShape class to include a collision detection method to check for collisions between circle objects.
+### `asteroid.py`  
+- Created an `Asteroid` class inheriting from `CircleShape` to represent asteroids.  
+- Added methods to draw and update the asteroid’s position.  
+
+### `constants.py`  
+- Added constants for player shooting speed and cooldown.  
+- Defined shot radius.  
+
+### `circleshape.py`  
+- Updated the `CircleShape` class to include a collision detection method to check for collisions between circle objects.  
+
 ---
-## Final Commit:
-For my final commit, I added the logic to split asteroids upon collision and updated the README with instructions on how to clone and run the game.
 
-### asteroid.py
-Updated the Asteroid class to include a split method that creates smaller asteroids when a larger one is destroyed.
+## Final Commit  
 
-### main.py changes
-Updated the collision detection logic to call the split method on asteroids when they are hit by a shot.
+For my final commit, I added the logic to split asteroids upon collision and updated the README with instructions on how to clone and run the game.  
 
-### README.md
-Added instructions on how to clone and run the game.
+### `asteroid.py`  
+- Updated the `Asteroid` class to include a `split` method that creates smaller asteroids when a larger one is destroyed.  
+
+### `main.py` Changes  
+- Updated the collision detection logic to call the `split` method on asteroids when they are hit by a shot.  
+
+### `README.md`  
+- Added instructions on how to clone and run the game.  
+
+---
 
 ## How to Clone and Run the Game:
 1. Clone the repository:

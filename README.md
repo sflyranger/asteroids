@@ -99,8 +99,9 @@ For my final commit, I added the logic to split asteroids upon collision and upd
     ```
 
 4. Run the game:
+   Python 3 is required to run the file.
     ```sh
-    python main.py
+    python3 main.py
     ```
 
 ## Game Controls:
